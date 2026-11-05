@@ -1,0 +1,30 @@
+{
+  "name": "studiospace-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "seed:demo-user": "node scripts/seed-demo-user.mjs"
+  },
+  "dependencies": {
+    "better-auth": "^1.7.15",
+    "jsonwebtoken": "^9.0.3",
+    "jspdf": "^4.2.1",
+    "mongodb": "^7.8.0",
+    "next": "^15.5.28",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-hot-toast": "^2.6.1",
+    "react-icons": "^5.7.0",
+    "swiper": "^14.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.2",
+    "daisyui": "^4.12.24",
+    "dotenv": "^18.0.9",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.19"
+  }
+}
