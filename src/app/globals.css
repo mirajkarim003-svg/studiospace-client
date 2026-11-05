@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: theme("fontFamily.body"); }
+  h1, h2, h3, h4 { font-family: theme("fontFamily.display"); letter-spacing: -0.015em; }
+  :focus-visible { outline: 2px solid oklch(var(--p)); outline-offset: 2px; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section-pad { @apply py-16 sm:py-24; }
+  /* One heading style for every section on every page */
+  .section-title { @apply font-display text-3xl font-extrabold leading-tight sm:text-4xl; }
+  .section-sub { @apply mt-3 max-w-2xl text-base leading-relaxed text-base-content/70; }
+  .field-label { @apply mb-1.5 block text-sm font-semibold; }
+  .field-error { @apply mt-1 text-sm text-error; }
+  .tape-badge { @apply inline-flex items-center gap-1 rounded-md bg-accent px-2 py-0.5 text-xs font-bold text-accent-content; }
+  .prose-studio p { @apply mb-4 leading-relaxed text-base-content/80; }
+}
+
+/* Hero slider theme */
+.hero-swiper {
+  --swiper-theme-color: #ffd21f;
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.45;
+  --swiper-navigation-size: 22px;
+}
+.hero-swiper .swiper-button-next,
+.hero-swiper .swiper-button-prev { color: #fff; }
+.gallery-swiper { --swiper-theme-color: #ffd21f; --swiper-navigation-size: 20px; }
+.gallery-swiper .swiper-button-next, .gallery-swiper .swiper-button-prev { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
