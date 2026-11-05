@@ -1,41 +1,53 @@
-# StudioSpace (client)
+# StudioSpace
 
-**Peer-to-peer creative workspace and production studio sharing platform.**
+StudioSpace is a platform where people can find and book creative studios. Studio owners can also list their spaces and manage bookings.
 
-- Live site: `https://YOUR-SITE.vercel.app` (replace after you deploy)
-- Server repo: `https://github.com/YOUR-USERNAME/studiospace-server`
+### Live Website
+https://studiospace-client-plum.vercel.app
 
-## Features
+### Features
+- Browse studios with search, filters, sorting and pagination
+- Homepage with featured studios and categories
+- Studio details with photos, amenities, host information and reviews
+- Add, update and delete studio listings
+- Book studios and manage booking requests
+- Google login and email/password authentication
+- Wishlist for saving favorite studios
+- Dashboard for managing activities
+- Light and dark mode
+- Responsive design for different devices
 
-- Browse, search, filter and sort studios (photo studios, film stages, podcast rooms, music suites, art workshops) with pagination
-- Home page with a 3-slide Swiper hero, 6 featured studios loaded from MongoDB, clickable category cards and "How booking works" / "Host guarantee" sections
-- Studio details page with gallery carousel, amenities, host info, reviews and a booking modal that shows already confirmed slots
-- Full CRUD for studios: add, update, delete (with confirmation modal), "My Studio Listings" table
-- Booking system with Pending / Confirmed / Completed / Cancelled statuses, host approval page and PDF receipts
-- Authentication with Better Auth (email + password, Google login), password rules, private routes that survive page reload
-- JWT in HTTPOnly cookies, double-booking prevention, light/dark theme toggle, saved-studios wishlist
-- Toasts (react-hot-toast) and custom modals everywhere, skeleton loaders, empty states, custom 404 page, fully responsive
+### Tech Stack
+- Next.js 15
+- JavaScript
+- Tailwind CSS
+- DaisyUI
+- Better Auth
+- MongoDB
+- Express.js
+- Swiper
+- react-hot-toast
+- jsPDF
 
-## Tech stack
+### Repositories
+- Client: https://github.com/mirajkarim003-svg/studiospace-client
+- Server: https://github.com/mirajkarim003-svg/studiospace-server
 
-Next.js 15 (App Router, JavaScript), Tailwind CSS + DaisyUI, Better Auth (MongoDB adapter), JWT, Swiper, react-hot-toast, react-icons, jsPDF. Server: Express + MongoDB (separate repo).
+### Run Locally
+1. Install dependencies using `npm install`.
+2. Copy `.env.example` to `.env.local` and configure the required variables.
+3. Start the server first.
+4. Run `npm run seed:demo-user` to create the demo account.
+5. Start the client using `npm run dev`.
+6. Open http://localhost:3000.
 
-## Run locally
+### Examiner Account
 
-1. Start the server first (see the server README).
-2. `npm install`
-3. Copy `.env.example` to `.env.local` and fill in the values (MongoDB URI, secrets, `API_URL`).
-4. `npm run seed:demo-user` (creates the examiner account in your database)
-5. `npm run dev` and open http://localhost:3000
+Email: examiner@studiospace.com
 
-## Examiner test credentials
+Password: Examiner123
 
-| Email | Password |
-| --- | --- |
-| examiner@studiospace.com | Examiner123 |
+This account has demo studios and booking data for testing different features.
 
-This account hosts three seeded studios (so My Listings, Booking Requests and Dashboard have data) and can also book the other hosts' studios.
-
-## Deploy
-
-Deploy on Vercel with the root directory set to this folder, add every variable from `.env.example` (set `API_URL` to your Render URL and `BETTER_AUTH_URL` to your Vercel URL). Full guide in the main README.
+### Deployment
+The client is deployed on Vercel and the server is deployed on Render.
